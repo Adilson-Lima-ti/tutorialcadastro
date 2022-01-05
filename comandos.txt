@@ -1,0 +1,55 @@
+cd Projects/django/
+561 ls
+562 mkdir aula03
+563 cd aula03
+564 python -m venv venv
+565 python3 -m venv venv
+566 source venv/bin/activate
+567 pip install django
+569 django-admin startproject tutorialcadastro
+570 cd tutorialcadastro/
+571 code .
+595 git init
+596 git add .
+597 git commit -m "first commit"
+598 git remote add origin git@github.com:Adilson-Lima-
+ti/tutorialcadastro.git
+599 git status
+600 git log
+601 git branch -M main
+602 git push -u origin main
+603 python manage.py runserver
+604 pip install django-allauth
+605 python manage.py migrate
+606 python manage.py runserver
+607 python manage.py startapp pages
+608 ls
+609 mkdir templates
+610 python manage.py runserver
+611 pip install django-crispy-forms
+612 python manage.py runserver
+613 python manage.py createsuperuser
+614 python manage.py runserver
+615 freeze > requeriments.txt
+616 pip freeze > requeriments.txt
+617 cat requeriments.txt
+618 git status
+619 git add .
+620 git status
+621 git commit -m "End of class"
+
+
+
+
+
+
+python manage.py shell
+
+from  django.core.mail import send_mail
+
+send_mail(
+"Teste",
+"Olá, eu sou um teste.",
+"Adilson Lima <adilson.monte.alto@gmail.com>",
+["portugues.adilsonlima@gmail.com"]
+)

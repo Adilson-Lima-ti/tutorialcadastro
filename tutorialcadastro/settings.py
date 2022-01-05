@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account', # add a/c
     'allauth.socialaccount', # add a/c
     'crispy_forms', # add a/c
+    'anymail', # # add a/c (edição email)
     # local apps
     'pages.apps.PagesConfig', # add a/c
 ]
@@ -142,7 +143,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = "/" # Add a/c Local para redirecionar após login
 
 ACCOUNT_SESSION_REMEMBER = True # Add a/c a opção "Lembrar - usuário/senha" ja fica definida pela página.
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # Add a/c para cadastrar envio de email de confirmação
+
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True # Add a/c Senha duas vezes ao cadastrar
 ACCOUNT_USERNAME_REQUIRED = False # Add a/c
 ACCOUNT_AUTHENTICATION_METHOD = "email" # Add a/c
@@ -161,3 +162,13 @@ ACCOUNT_UNIQUE_EMAIL = True # Add a/c
 # django-crispy-forms - Add a/c
 
 CRISPY_TEMPLATE_PACK = "bootstrap4" # Add a/c
+
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # Add a/c para cadastrar envio de email de confirmação NO CONSOLE
+
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "no-reply@meusite.com.br"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL # repetiu a vaŕiável de cima que significa o mesmo e-mail.
+ANYMAIL = {
+    "MAILGUN_API_KEY" : "de9e5ce978b94abd1dd8de4de2844ac7-0be3b63b-7986ac30",
+    "MAILGUN_SENDER_DOMAIN": "sandbox1095cdb6b056446191d439862ba55ef7.mailgun.org",
+}
